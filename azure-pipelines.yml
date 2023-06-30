@@ -28,12 +28,11 @@ stages:
         repository: $(imageName)
         tags: |
           $(tag)
-    - task: ECRPushImage@1
+    - task: DockerCompose@0
       inputs:
-        awsCredentials: 'iam_user_ecr_aws'
-        regionName: 'us-east-1'
-        imageSource: 'imageid'
-        sourceImageId: '$(imageName):$(tag)'
-        repositoryName: '$(repoName)'
-        pushTag: $(tag)
-        forceDockerNamingConventions: true
+        containerregistrytype: 'Azure Container Registry'
+        azureSubscription: 'Azure subscription 1 (5a0eee50-4814-4a84-babe-068c6bee0201)'
+        azureContainerRegistry: '{"loginServer":"classicpipeline.azurecr.io", "id" : "/subscriptions/5a0eee50-4814-4a84-babe-068c6bee0201/resourceGroups/svcloudtech/providers/Microsoft.ContainerRegistry/registries/classicpipeline"}'
+        dockerComposeFile: '**/docker-compose.yml'
+        action: 'Run a Docker Compose command'
+    
