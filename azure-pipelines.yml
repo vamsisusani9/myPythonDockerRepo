@@ -19,11 +19,12 @@ stages:
     - task: Docker@2
       displayName: Build an image
       inputs:
-        command: build
-        dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
-        repository: $(imageName)
-        tags: |
-          $(tag)
+        containerRegistry: 'azure container registry'
+        repository: '$(imageName)'
+        command: 'build'
+        Dockerfile: '**/Dockerfile'
+        buildContext: '**/Dockerfile'
+        tags: '$(tag)'
     - task: DockerCompose@0
       inputs:
         containerregistrytype: 'Azure Container Registry'
