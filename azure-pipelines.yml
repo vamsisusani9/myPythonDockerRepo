@@ -21,15 +21,8 @@ stages:
       inputs:
         containerRegistry: 'azure container registry'
         repository: '$(imageName)'
-        command: 'build'
+        command: 'buildAndPush'
         Dockerfile: '*/myPythonDockerRepoDockerfile'
         buildContext: '**/Dockerfile'
         tags: '$(tag)'
-    - task: DockerCompose@0
-      inputs:
-        containerregistrytype: 'Azure Container Registry'
-        azureSubscription: 'Azure subscription 1 (5a0eee50-4814-4a84-babe-068c6bee0201)'
-        azureContainerRegistry: '{"loginServer":"pythonapplication.azurecr.io", "id" : "/subscriptions/5a0eee50-4814-4a84-babe-068c6bee0201/resourceGroups/svcloudtech/providers/Microsoft.ContainerRegistry/registries/pythonapplication"}'
-        dockerComposeFile: '**/docker-compose.yml'
-        action: 'Run a Docker Compose command'
     
