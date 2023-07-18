@@ -22,7 +22,7 @@ stages:
         containerRegistry: 'azure container registry'
         repository: '$(imageName)'
         command: 'buildAndPush'
-        Dockerfile: '*/myPythonDockerRepoDockerfile'
+        Dockerfile: '**/Dockerfile'
         buildContext: '**/Dockerfile'
         tags: '$(tag)'
     
