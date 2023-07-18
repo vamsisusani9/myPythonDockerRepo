@@ -1,7 +1,3 @@
-# Docker
-# Build a Docker image
-# https://docs.microsoft.com/azure/devops/pipelines/languages/docker
-
 trigger:
 - master
 
@@ -32,7 +28,7 @@ stages:
       inputs:
         containerregistrytype: 'Azure Container Registry'
         azureSubscription: 'Azure subscription 1 (5a0eee50-4814-4a84-babe-068c6bee0201)'
-        azureContainerRegistry: '{"loginServer":"classicpipeline.azurecr.io", "id" : "/subscriptions/5a0eee50-4814-4a84-babe-068c6bee0201/resourceGroups/svcloudtech/providers/Microsoft.ContainerRegistry/registries/classicpipeline"}'
+        azureContainerRegistry: '{"loginServer":"pythonapplication.azurecr.io", "id" : "/subscriptions/5a0eee50-4814-4a84-babe-068c6bee0201/resourceGroups/svcloudtech/providers/Microsoft.ContainerRegistry/registries/pythonapplication"}'
         dockerComposeFile: '**/docker-compose.yml'
         action: 'Run a Docker Compose command'
     
