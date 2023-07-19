@@ -24,4 +24,6 @@ stages:
         command: 'buildAndPush'
         Dockerfile: '**/*Dockerfile'
         buildContext: 'Dockerfile'
-        tags: '$(tag)'
+        tags: |
+          $(tag)
+          Latest
