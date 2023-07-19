@@ -13,8 +13,8 @@ spec:
         app: my-python-app
     spec:
       containers:
-      - name: mypythondockerrepo
-        image: myacrrepo421.azurecr.io/akannan1087/mypythondockerrepo:#{Build.BuildId}#
+      - name: mypythondocker
+        image: mypythondocker.azurecr.io/akannan1087/mypythondocker:#{Build.BuildId}#
         ports:
         - containerPort: 5000
 # service type loadbalancer       
