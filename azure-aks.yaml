@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: mypythondocker
-        image: mypythondocker.azurecr.io/kphaniprasad/mypythondockerrepo:244
+        image: mypythondocker.azurecr.io/kphaniprasad/mypythondockerrepo:251
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
