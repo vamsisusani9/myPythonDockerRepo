@@ -22,7 +22,7 @@ stages:
         containerRegistry: 'azure container registry'
         repository: 'program'
         command: 'buildAndPush'
-        Dockerfile: '**/*Dockerfile'
+        Dockerfile: '**/Dockerfile'
         buildContext: 'Dockerfile'
         tags: |
           $(tag)
