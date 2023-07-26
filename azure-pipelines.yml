@@ -28,6 +28,6 @@ stages:
           Latest
     - task: Docker@2
       inputs:
-        containerRegistry: 'ACR'
+        containerRegistry: 'azure container registry'
         repository: 'program'
         command: 'push'
