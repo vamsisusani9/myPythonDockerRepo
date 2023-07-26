@@ -23,7 +23,6 @@ stages:
         repository: 'program'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
-        buildContext: 'Dockerfile'
         tags: |
           $(tag)
           Latest
