@@ -20,7 +20,7 @@ stages:
       displayName: Build an image
       inputs:
         containerRegistry: 'azure container registry'
-        repository: '$(imageName)'
+        repository: 'program'
         command: 'buildAndPush'
         Dockerfile: '**/*Dockerfile'
         buildContext: 'Dockerfile'
