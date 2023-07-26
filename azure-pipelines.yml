@@ -31,3 +31,5 @@ stages:
         containerRegistry: 'azure container registry'
         repository: 'program'
         command: 'push'
+        addPipelineData: false
+        addBaseImageData: false
