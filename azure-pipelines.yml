@@ -21,8 +21,13 @@ stages:
       inputs:
         containerRegistry: 'azure container registry'
         repository: 'program'
-        command: 'buildAndPush'
+        command: 'build'
         Dockerfile: '**/Dockerfile'
         tags: |
           $(tag)
           Latest
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'ACR'
+        repository: 'program'
+        command: 'push'
