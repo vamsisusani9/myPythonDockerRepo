@@ -20,7 +20,7 @@ stages:
       displayName: Build an image
       inputs:
         containerRegistry: 'azure container registry'
-        repository: 'program'
+        repository: 'program.azurecr.io'
         command: 'build'
         Dockerfile: '**/Dockerfile'
         tags: |
@@ -29,7 +29,7 @@ stages:
     - task: Docker@2
       inputs:
         containerRegistry: 'azure container registry'
-        repository: 'program'
+        repository: 'program.azurecr.io'
         command: 'push'
         addPipelineData: false
         addBaseImageData: false
