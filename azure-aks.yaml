@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: mypythondocker
-        image: azdemodevopp.azurecr.io/vamsisusani9/mypythondockerrepo:15
+        image: mypythondockerrepo:18
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
